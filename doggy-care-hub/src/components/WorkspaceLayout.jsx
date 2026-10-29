@@ -99,6 +99,7 @@ export default function WorkspaceLayout() {
 
       <div className="workspace-column">
         <header className="workspace-topbar">
+
           <div className="workspace-page-heading">
             <span className="dashboard-breadcrumb">
               Doggy Care Hub / {pageTitle}
