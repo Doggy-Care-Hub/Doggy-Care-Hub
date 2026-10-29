@@ -1,114 +1,133 @@
 
+import { Link } from "react-router-dom";
+import {
+  Syringe,
+  Apple,
+  HeartPulse,
+  ShieldCheck,
+  MessageCircle,
+  PawPrint,
+  CalendarDays,
+} from "lucide-react";
+
 const features = [
   {
-    symbol: "🐶",
-    title: "Dog Profiles",
-    description:
-      "Manage your dog's profile, breed information, and care history in one place.",
+    title: "Vaccination Schedule",
+    description: "Track due dates, records and history.",
+    icon: Syringe,
   },
   {
-    symbol: "💚",
-    title: "Vaccination Care",
-    description:
-      "Keep vaccination records organized and review recommended schedules.",
+    title: "Nutrition Advice",
+    description: "Get guidance by age, breed and weight.",
+    icon: Apple,
   },
   {
-    symbol: "📅",
-    title: "Care Reminders",
-    description:
-      "Keep track of upcoming vaccinations and important preventive care activities.",
+    title: "Health Guidance",
+    description: "Explore general health tips for your dog.",
+    icon: HeartPulse,
   },
   {
-    symbol: "💬",
+    title: "Preventive Care",
+    description: "Keep track of dental care and checkups.",
+    icon: ShieldCheck,
+  },
+  {
     title: "AI Care Assistant",
-    description:
-      "Explore general dog-care guidance and answers to everyday questions.",
+    description: "Ask general dog-care questions.",
+    icon: MessageCircle,
   },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <section className="hero">
-        <div className="hero-content">
-          <span className="eyebrow">
-            A happier, healthier life for your dog
+    <main className="landing-page">
+      <section className="landing-hero">
+        <div className="landing-copy">
+          <span className="landing-eyebrow">
+            YOUR DOG'S WELLNESS, IN ONE PLACE
           </span>
 
           <h1>
-            Every tail deserves
-            <br />
-            <span>the best care.</span>
+            Your Dog's Health Companion
           </h1>
 
+          <h2>Track. Vaccinate. Care.</h2>
+
           <p>
-            Your dog's care journey, all in one place. Manage profiles,
-            vaccination records, reminders, and everyday care guidance
-            with Doggy Care Hub.
+            Manage your dog's health, vaccinations and care in one place,
+            with breed-specific guidance, reminders and an AI-assisted
+            chatbot for general dog-care questions.
           </p>
 
-          <div className="hero-actions">
-            <a className="button button-primary" href="/register">
-              Get Started
-            </a>
-            <a className="button button-secondary" href="#features">
-              Explore Features
-            </a>
+          <div className="landing-actions">
+            <Link to="/login" className="button landing-dark-button">
+              Log in
+            </Link>
+
+            <Link to="/register" className="button landing-outline-button">
+              Register
+            </Link>
           </div>
 
-          <div className="trust-note">
-            💚 Organized care. Informed decisions. Happier dogs.
+          <div className="landing-trust">
+            <PawPrint size={18} />
+            <span>Helping you care for your best friend, every day.</span>
           </div>
         </div>
 
-        <div className="hero-visual">
-          <div className="hero-circle">
-            <span className="paw paw-one">🐾</span>
-            <span className="paw paw-two">🐾</span>
-            <div className="dog-emoji" role="img" aria-label="Happy dog">
+        <div className="landing-image-panel">
+          <div className="landing-image-circle">
+            <span className="landing-paw landing-paw-one">🐾</span>
+            <span className="landing-dog" role="img" aria-label="Dog">
               🐕
-            </div>
+            </span>
+            <span className="landing-paw landing-paw-two">🐾</span>
+          </div>
 
-            <div className="floating-card">
-              <span className="floating-icon">💚</span>
-              <div>
-                <strong>Care made simpler</strong>
-                <small>One hub for your best friend</small>
-              </div>
-            </div>
+          <div className="landing-image-caption">
+            <span className="caption-icon">
+              <HeartPulse size={19} />
+            </span>
+            <span>
+              <strong>Care starts with you</strong>
+              <small>One hub for your dog's wellbeing</small>
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="features-section" id="features">
-        <div className="section-heading">
-          <span className="eyebrow">Everything in one hub</span>
-          <h2>Care for every part of their journey.</h2>
+      <section className="landing-features" id="features">
+        <div className="landing-section-heading">
+          <span className="landing-eyebrow">WHAT YOU CAN DO</span>
+          <h2>Everything your dog needs, in one hub.</h2>
           <p>
-            Helpful tools to make responsible dog care easier to manage.
+            Simple tools to help you organize your dog's everyday care.
           </p>
         </div>
 
-        <div className="feature-grid">
-          {features.map((feature) => (
-            <article className="feature-card" key={feature.title}>
-              <div className="feature-icon">{feature.symbol}</div>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
+        <div className="landing-feature-grid">
+          {features.map(({ title, description, icon: Icon }) => (
+            <article className="landing-feature-card" key={title}>
+              <span className="landing-feature-icon">
+                <Icon size={22} strokeWidth={1.8} />
+              </span>
+              <h3>{title}</h3>
+              <p>{description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bottom-cta">
+      <section className="landing-bottom-cta">
         <div>
-          <h2>Make every day a little better for your dog.</h2>
-          <p>Start organizing your dog's care journey today.</p>
+          <span className="landing-eyebrow">START YOUR JOURNEY</span>
+          <h2>Make dog care easier to manage.</h2>
+          <p>Create an account to start organizing your dog's care.</p>
         </div>
 
-        <a className="button button-primary" href="/register">
+        <Link to="/register" className="button landing-dark-button">
           Create an Account
-        </a>
+        </Link>
       </section>
     </main>
   );
