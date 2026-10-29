@@ -3060,3 +3060,1913 @@
   }
 }
 
+
+/* =========================================
+   MY DOGS PAGE
+========================================= */
+
+.dogs-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 22px 25px 28px;
+  color: #303b4c;
+  background: #fff;
+  font-family: "DM Sans", "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+
+.dogs-page *,
+.dogs-page *::before,
+.dogs-page *::after {
+  box-sizing: border-box;
+}
+
+.dogs-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.dogs-heading > div {
+  min-width: 0;
+}
+
+.dogs-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #8993a2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.dogs-heading h1 {
+  margin: 0 0 6px;
+  color: #303b4c;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.dogs-heading p {
+  margin: 0;
+  color: #8993a2;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.dogs-primary-button,
+.dogs-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 9px 15px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.dogs-primary-button {
+  color: #fff;
+  background: #34445d;
+  border-color: #34445d;
+}
+
+.dogs-primary-button:hover {
+  background: #26364d;
+}
+
+.dogs-secondary-button {
+  color: #46556b;
+  background: #fff;
+  border-color: #bdc6d2;
+}
+
+.dogs-secondary-button:hover {
+  background: #f3f5f8;
+}
+
+/* Add/Edit form */
+
+.dog-form-card {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 9px;
+}
+
+.dog-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.dog-form-heading-icon {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #34445d;
+  background: #eef1f5;
+  border-radius: 8px;
+}
+
+.dog-form-heading h2 {
+  margin: 0 0 4px;
+  color: #303b4c;
+  font-size: 17px;
+}
+
+.dog-form-heading p {
+  margin: 0;
+  color: #8993a2;
+  font-size: 12px;
+}
+
+.dog-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.dog-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.dog-form-field label {
+  color: #465267;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dog-form-field input,
+.dog-form-field select {
+  width: 100%;
+  min-height: 39px;
+  padding: 9px 11px;
+  color: #303b4c;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 6px;
+  outline: none;
+  font: inherit;
+  font-size: 12px;
+}
+
+.dog-form-field input:focus,
+.dog-form-field select:focus {
+  border-color: #6485c5;
+  box-shadow: 0 0 0 2px rgb(71 120 245 / 10%);
+}
+
+.dog-form-field input::placeholder {
+  color: #a0a8b4;
+}
+
+.dog-form-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+/* Search and result count */
+
+.dogs-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.dogs-count {
+  color: #8993a2;
+  font-size: 12px;
+}
+
+.dogs-count strong {
+  color: #303b4c;
+  font-weight: 700;
+}
+
+.dogs-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(100%, 320px);
+  min-height: 38px;
+  padding: 0 11px;
+  color: #8993a2;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 7px;
+}
+
+.dogs-search:focus-within {
+  border-color: #6485c5;
+}
+
+.dogs-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 0;
+  color: #303b4c;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 11px;
+}
+
+.dogs-search input::placeholder {
+  color: #8993a2;
+}
+
+.dogs-clear-search {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  padding: 3px;
+  color: #8993a2;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+/* Dog cards */
+
+.managed-dog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.managed-dog-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 9px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.managed-dog-card:hover {
+  border-color: #a5b2c3;
+  box-shadow: 0 4px 14px rgb(39 54 77 / 5%);
+}
+
+.managed-dog-art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 115px;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+.managed-dog-emoji {
+  font-size: 54px;
+  line-height: 1;
+}
+
+.managed-dog-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 8px;
+  color: #526078;
+  background: #fff;
+  border: 1px solid #e0e5ec;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.managed-dog-body {
+  padding: 15px;
+}
+
+.managed-dog-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.managed-dog-title-row h2 {
+  margin: 0 0 5px;
+  color: #303b4c;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.managed-dog-breed {
+  margin: 0;
+  color: #8993a2;
+  font-size: 11px;
+}
+
+.managed-dog-paw {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #53667f;
+  background: #f0f2f5;
+  border-radius: 7px;
+}
+
+.managed-dog-details {
+  display: grid;
+  gap: 11px;
+  margin-top: 17px;
+  padding: 13px 0;
+  border-top: 1px solid #e5e8ed;
+  border-bottom: 1px solid #e5e8ed;
+}
+
+.managed-dog-details > div {
+  display: grid;
+  grid-template-columns: 17px 1fr auto;
+  align-items: center;
+  gap: 7px;
+  color: #8993a2;
+}
+
+.managed-dog-details > div > span {
+  font-size: 11px;
+}
+
+.managed-dog-details > div > strong {
+  color: #465267;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: right;
+}
+
+.managed-dog-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #526078;
+  font-size: 10px;
+}
+
+.profile-status-dot {
+  width: 7px;
+  height: 7px;
+  background: #4d965c;
+  border-radius: 50%;
+}
+
+.managed-dog-actions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.dog-action-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 30px;
+  padding: 6px 8px;
+  color: #46556b;
+  background: #fff;
+  border: 1px solid #d8dee7;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+}
+
+.dog-action-button:hover {
+  background: #f3f5f8;
+}
+
+.dog-delete-button {
+  color: #a34c4c;
+}
+
+.dog-delete-button:hover {
+  color: #8f2929;
+  background: #fff2f2;
+  border-color: #e8caca;
+}
+
+/* Add another dog */
+
+.managed-add-dog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 220px;
+  padding: 20px;
+  color: #526078;
+  background: #fff;
+  border: 1px dashed #bdc6d2;
+  border-radius: 9px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.managed-add-dog-card:hover {
+  background: #f8faff;
+  border-color: #8c9fba;
+}
+
+.managed-add-dog-icon {
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  background: #f0f2f5;
+  border-radius: 50%;
+}
+
+.managed-add-dog-card strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.managed-add-dog-card > span:last-child {
+  color: #8993a2;
+  font-size: 10px;
+}
+
+/* Empty state and demo note */
+
+.dogs-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 28px;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #bdc6d2;
+  border-radius: 9px;
+}
+
+.dogs-empty-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
+  place-items: center;
+  color: #53667f;
+  background: #f0f2f5;
+  border-radius: 50%;
+}
+
+.dogs-empty-state h2 {
+  margin: 0 0 8px;
+  color: #303b4c;
+  font-size: 17px;
+}
+
+.dogs-empty-state p {
+  margin: 0 0 16px;
+  color: #8993a2;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.dogs-demo-notice {
+  margin: 20px 0 0;
+  color: #8993a2;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .managed-dog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .dogs-page {
+    padding: 18px 14px 24px;
+  }
+
+  .dogs-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dogs-heading h1 {
+    font-size: 23px;
+  }
+
+  .dogs-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dogs-search {
+    width: 100%;
+  }
+
+  .dog-form {
+    grid-template-columns: 1fr;
+  }
+
+  .dog-form-actions {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+
+  .managed-dog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .managed-add-dog-card {
+    min-height: 150px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .managed-dog-card,
+  .managed-add-dog-card,
+  .dogs-primary-button,
+  .dogs-secondary-button {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   DOG BREEDS PAGE
+========================================= */
+
+.breeds-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 22px 25px 28px;
+  color: #303b4c;
+  background: #fff;
+  font-family: "DM Sans", "Nunito", sans-serif;
+}
+
+.breeds-page *,
+.breeds-page *::before,
+.breeds-page *::after {
+  box-sizing: border-box;
+}
+
+.breeds-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+}
+
+.breeds-eyebrow {
+  display: block;
+  margin-bottom: 7px;
+  color: #8993a2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.breeds-heading h1 {
+  margin: 0 0 6px;
+  color: #303b4c;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.breeds-heading > div:first-child > p {
+  margin: 0;
+  color: #8993a2;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.breeds-total {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 11px 15px;
+  color: #526078;
+  background: #f4f6f8;
+  border: 1px solid #e0e5ec;
+  border-radius: 8px;
+}
+
+.breeds-total > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.breeds-total strong {
+  color: #303b4c;
+  font-size: 17px;
+}
+
+.breeds-total span {
+  color: #8993a2;
+  font-size: 10px;
+}
+
+/* Search and filters */
+
+.breeds-filter-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 14px;
+  margin-bottom: 25px;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 8px;
+}
+
+.breeds-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 220px;
+  max-width: 470px;
+  min-height: 38px;
+  padding: 0 11px;
+  color: #8993a2;
+  border: 1px solid #bdc6d2;
+  border-radius: 6px;
+}
+
+.breeds-search:focus-within {
+  border-color: #6485c5;
+}
+
+.breeds-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 9px 0;
+  color: #303b4c;
+  background: transparent;
+  border: 0;
+  outline: none;
+  font: inherit;
+  font-size: 11px;
+}
+
+.breeds-search input::placeholder {
+  color: #8993a2;
+}
+
+.breeds-clear-search {
+  display: grid;
+  place-items: center;
+  padding: 3px;
+  color: #8993a2;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.breeds-size-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.breeds-filter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #697589;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.breeds-filter-options {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px;
+  background: #f0f2f5;
+  border-radius: 6px;
+}
+
+.breeds-filter-button {
+  padding: 7px 11px;
+  color: #697589;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+}
+
+.breeds-filter-button:hover {
+  color: #303b4c;
+}
+
+.breeds-filter-button.selected {
+  color: #303b4c;
+  background: #fff;
+  border-color: #dce2e9;
+  box-shadow: 0 1px 2px rgb(39 54 77 / 5%);
+}
+
+/* Results heading */
+
+.breeds-results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.breeds-results-heading h2 {
+  margin: 0 0 5px;
+  color: #303b4c;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.breeds-results-heading p {
+  margin: 0;
+  color: #8993a2;
+  font-size: 11px;
+}
+
+.breeds-reset-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 10px;
+  color: #526078;
+  background: #fff;
+  border: 1px solid #d8dee7;
+  border-radius: 5px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 10px;
+}
+
+.breeds-reset-button:hover {
+  background: #f3f5f8;
+}
+
+/* Breed cards */
+
+.breed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 16px;
+}
+
+.breed-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #bdc6d2;
+  border-radius: 9px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.breed-card:hover {
+  border-color: #a5b2c3;
+  box-shadow: 0 4px 14px rgb(39 54 77 / 5%);
+}
+
+.breed-art {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  min-height: 112px;
+  background: #f0f2f5;
+  border-bottom: 1px solid #e1e5eb;
+}
+
+.breed-emoji {
+  font-size: 52px;
+  line-height: 1;
+}
+
+.breed-size-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 8px;
+  color: #526078;
+  background: #fff;
+  border: 1px solid #e0e5ec;
+  border-radius: 4px;
+  font-size: 9px;
+}
+
+.breed-card-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 112px);
+  padding: 15px;
+}
+
+.breed-card-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 9px;
+}
+
+.breed-card-title h3 {
+  margin: 0 0 6px;
+  color: #303b4c;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.breed-temperament {
+  margin: 0;
+  color: #8993a2;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.breed-card-paw {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  color: #53667f;
+  background: #f0f2f5;
+  border-radius: 7px;
+}
+
+.breed-lifespan {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  padding: 11px 0;
+  color: #8993a2;
+  border-top: 1px solid #e5e8ed;
+  border-bottom: 1px solid #e5e8ed;
+}
+
+.breed-lifespan span {
+  flex: 1;
+  font-size: 10px;
+}
+
+.breed-lifespan strong {
+  color: #465267;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.breed-care {
+  padding: 13px 0;
+}
+
+.breed-care h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 7px;
+  color: #465267;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.breed-care p {
+  margin: 0;
+  color: #8993a2;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.breed-details-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  margin-top: auto;
+  padding: 11px 0 0;
+  color: #526b91;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid #e5e8ed;
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.breed-details-button:hover {
+  color: #2e4d7c;
+}
+
+.breed-details-button > span {
+  font-size: 16px;
+}
+
+/* Empty state */
+
+.breeds-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 230px;
+  padding: 28px;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #bdc6d2;
+  border-radius: 9px;
+}
+
+.breeds-empty-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 12px;
+  place-items: center;
+  color: #53667f;
+  background: #f0f2f5;
+  border-radius: 50%;
+}
+
+.breeds-empty-state h2 {
+  margin: 0 0 8px;
+  color: #303b4c;
+  font-size: 17px;
+}
+
+.breeds-empty-state p {
+  margin: 0 0 15px;
+  color: #8993a2;
+  font-size: 12px;
+}
+
+/* Breed detail dialog */
+
+.breed-modal-backdrop {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 20px;
+  background: rgb(27 37 52 / 45%);
+}
+
+.breed-modal {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  padding: 24px;
+  color: #303b4c;
+  background: #fff;
+  border: 1px solid #e0e5ec;
+  border-radius: 10px;
+  box-shadow: 0 15px 50px rgb(0 0 0 / 12%);
+}
+
+.breed-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: grid;
+  width: 33px;
+  height: 33px;
+  place-items: center;
+  color: #526078;
+  background: #fff;
+  border: 1px solid #d8dee7;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.breed-modal-art {
+  display: grid;
+  min-height: 115px;
+  margin-bottom: 20px;
+  place-items: center;
+  background: #f0f2f5;
+  border-radius: 8px;
+}
+
+.breed-modal-art span {
+  font-size: 57px;
+}
+
+.breed-modal h2 {
+  margin: 0 0 15px;
+  font-size: 22px;
+}
+
+.breed-modal-facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.breed-modal-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background: #f5f6f8;
+  border: 1px solid #e5e8ed;
+  border-radius: 6px;
+}
+
+.breed-modal-facts span {
+  color: #8993a2;
+  font-size: 10px;
+}
+
+.breed-modal-facts strong {
+  color: #303b4c;
+  font-size: 12px;
+}
+
+.breed-modal-section {
+  padding: 13px 0;
+  border-top: 1px solid #e5e8ed;
+}
+
+.breed-modal-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0 0 7px;
+  font-size: 12px;
+}
+
+.breed-modal-section p,
+.breed-modal-note {
+  margin: 0;
+  color: #697589;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+.breed-modal-note {
+  margin-top: 8px;
+  padding: 12px;
+  background: #f5f6f8;
+  border-radius: 6px;
+}
+
+.breeds-modal-done {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px;
+  color: #fff;
+  background: #34445d;
+  border: 1px solid #34445d;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.breeds-modal-done:hover {
+  background: #26364d;
+}
+
+/* Footer notice */
+
+.breeds-demo-notice {
+  margin: 20px 0 0;
+  color: #8993a2;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* Responsive layout */
+
+@media (max-width: 1100px) {
+  .breed-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .breeds-page {
+    padding: 18px 14px 24px;
+  }
+
+  .breeds-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .breeds-heading h1 {
+    font-size: 23px;
+  }
+
+  .breeds-filter-panel {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .breeds-search {
+    max-width: none;
+    min-width: 0;
+  }
+
+  .breeds-size-filter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .breed-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .breed-card {
+    transition: none;
+  }
+}
+
+
+
+/* ========================================
+   VACCINATION RECORDS PAGE
+======================================== */
+
+.vaccinations-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 30px 36px;
+  color: #253044;
+}
+
+.vaccinations-page * {
+  box-sizing: border-box;
+}
+
+.vaccinations-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.vaccinations-heading-copy {
+  min-width: 0;
+}
+
+.vaccinations-eyebrow {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.vaccinations-heading h1 {
+  margin: 0;
+  color: #202b3c;
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+.vaccinations-heading p {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: #778295;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.vaccinations-primary-button,
+.vaccination-secondary-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.vaccinations-primary-button {
+  background: #34465f;
+  color: #fff;
+}
+
+.vaccinations-primary-button:hover {
+  background: #26364c;
+  transform: translateY(-1px);
+}
+
+.vaccination-secondary-button {
+  border-color: #dce2e9;
+  background: #fff;
+  color: #475569;
+}
+
+.vaccination-secondary-button:hover {
+  border-color: #aeb9c8;
+  background: #f8fafc;
+}
+
+.vaccinations-primary-button:focus-visible,
+.vaccination-secondary-button:focus-visible,
+.vaccination-row-actions button:focus-visible {
+  outline: 3px solid #b9d7ff;
+  outline-offset: 2px;
+}
+
+/* Summary cards */
+
+.vaccination-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 28px;
+}
+
+.vaccination-stat {
+  display: flex;
+  min-width: 0;
+  min-height: 112px;
+  align-items: center;
+  gap: 15px;
+  padding: 21px;
+  border: 1px solid #e5e9ef;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 2px 7px rgb(15 23 42 / 3%);
+}
+
+.vaccination-stat-icon {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.vaccination-stat-icon.total {
+  background: #edf3fb;
+  color: #466a9a;
+}
+
+.vaccination-stat-icon.completed {
+  background: #eaf7ef;
+  color: #2f8a59;
+}
+
+.vaccination-stat-icon.upcoming {
+  background: #fff5df;
+  color: #b7791f;
+}
+
+.vaccination-stat-icon.overdue {
+  background: #fff0ed;
+  color: #cf5b48;
+}
+
+.vaccination-stat p {
+  margin: 0 0 8px;
+  color: #788496;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.vaccination-stat h2 {
+  margin: 0;
+  color: #253044;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Add/edit form */
+
+.vaccination-form-card {
+  margin-bottom: 28px;
+  padding: 25px;
+  border: 1px solid #e3e8ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+  animation: vaccination-form-enter 0.2s ease;
+}
+
+@keyframes vaccination-form-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vaccination-form-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 23px;
+}
+
+.vaccination-form-heading-icon {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+  background: #edf3fb;
+  color: #466a9a;
+}
+
+.vaccination-form-heading h2 {
+  margin: 0;
+  color: #253044;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.vaccination-form-heading p {
+  margin: 5px 0 0;
+  color: #8791a1;
+  font-size: 13px;
+}
+
+.vaccination-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.vaccination-form label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  color: #485568;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vaccination-form input,
+.vaccination-form select {
+  width: 100%;
+  min-width: 0;
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #344054;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.vaccination-form input:focus,
+.vaccination-form select:focus {
+  border-color: #829fc4;
+  box-shadow: 0 0 0 3px rgb(91 132 185 / 12%);
+}
+
+.vaccination-form input::placeholder {
+  color: #a0a9b6;
+}
+
+.vaccination-form-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #c24136;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.vaccination-form-actions {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 5px;
+}
+
+/* Records section */
+
+.vaccination-records-section {
+  min-width: 0;
+  padding: 25px;
+  border: 1px solid #e5e9ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 3%);
+}
+
+.vaccination-records-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 21px;
+}
+
+.vaccination-records-heading h2 {
+  margin: 0;
+  color: #253044;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.vaccination-records-heading p {
+  margin: 7px 0 0;
+  color: #8791a1;
+  font-size: 13px;
+}
+
+.vaccination-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.vaccination-search {
+  display: flex;
+  width: min(100%, 380px);
+  min-height: 42px;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #dfe5ed;
+  border-radius: 9px;
+  background: #fff;
+  color: #8a95a5;
+}
+
+.vaccination-search:focus-within {
+  border-color: #829fc4;
+  box-shadow: 0 0 0 3px rgb(91 132 185 / 10%);
+}
+
+.vaccination-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #344054;
+  font: inherit;
+  font-size: 13px;
+}
+
+.vaccination-search input::placeholder {
+  color: #9aa4b2;
+}
+
+.vaccination-search button {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  color: #788496;
+  cursor: pointer;
+}
+
+.vaccination-search button:hover {
+  background: #f1f4f8;
+}
+
+.vaccination-filter {
+  min-height: 42px;
+  max-width: 100%;
+  padding: 9px 33px 9px 12px;
+  border: 1px solid #dfe5ed;
+  border-radius: 9px;
+  outline: none;
+  background-color: #fff;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.vaccination-filter:focus {
+  border-color: #829fc4;
+}
+
+/* Table */
+
+.vaccination-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e9edf2;
+  border-radius: 10px;
+}
+
+.vaccination-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.vaccination-table thead {
+  background: #f7f9fc;
+}
+
+.vaccination-table th {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e8edf3;
+  color: #748094;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.45px;
+  white-space: nowrap;
+}
+
+.vaccination-table td {
+  padding: 15px 16px;
+  border-bottom: 1px solid #edf0f4;
+  color: #657186;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.vaccination-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.vaccination-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.vaccination-table tbody tr:hover {
+  background: #fafbfd;
+}
+
+.vaccination-dog-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vaccination-dog-cell strong {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.vaccination-dog-avatar {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #edf3fb;
+  color: #5678a7;
+}
+
+.vaccination-vaccine-name {
+  color: #344054;
+  font-weight: 600;
+}
+
+.vaccination-due-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #657186;
+}
+
+.vaccination-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.vaccination-status-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.vaccination-status.completed {
+  border-color: #d5eddf;
+  background: #edf8f1;
+  color: #27834f;
+}
+
+.vaccination-status.upcoming {
+  border-color: #f5e4b9;
+  background: #fff8e8;
+  color: #a66b13;
+}
+
+.vaccination-status.overdue {
+  border-color: #f4d5d0;
+  background: #fff0ee;
+  color: #c64d3d;
+}
+
+.vaccination-actions-heading {
+  text-align: center;
+}
+
+.vaccination-row-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.vaccination-row-actions button {
+  display: inline-flex;
+  width: 33px;
+  height: 33px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #66758a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vaccination-row-actions button:hover {
+  border-color: #c8d5e5;
+  background: #f1f6fc;
+  color: #365b8b;
+}
+
+.vaccination-row-actions button.vaccination-delete-button:hover {
+  border-color: #f1c9c4;
+  background: #fff0ee;
+  color: #c24136;
+}
+
+/* Empty state */
+
+.vaccination-empty-state {
+  display: flex;
+  min-height: 240px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.vaccination-empty-icon {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background: #edf3fb;
+  color: #5678a7;
+}
+
+.vaccination-empty-state h3 {
+  margin: 0;
+  color: #344054;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.vaccination-empty-state p {
+  max-width: 360px;
+  margin: 9px 0 18px;
+  color: #8791a1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* Demo notice */
+
+.vaccination-demo-notice {
+  margin: 19px 2px 0;
+  color: #8791a1;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Responsive layout */
+
+@media (max-width: 1100px) {
+  .vaccination-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vaccinations-page {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}
+
+@media (max-width: 650px) {
+  .vaccinations-page {
+    padding: 20px 14px 28px;
+  }
+
+  .vaccinations-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .vaccinations-heading > button {
+    width: 100%;
+  }
+
+  .vaccinations-heading p {
+    font-size: 13px;
+  }
+
+  .vaccination-summary {
+    gap: 11px;
+    margin-bottom: 21px;
+  }
+
+  .vaccination-stat {
+    min-height: 94px;
+    gap: 10px;
+    padding: 13px 11px;
+  }
+
+  .vaccination-stat-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 10px;
+  }
+
+  .vaccination-stat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .vaccination-stat p {
+    margin-bottom: 7px;
+    font-size: 11px;
+  }
+
+  .vaccination-stat h2 {
+    font-size: 23px;
+  }
+
+  .vaccination-form-card,
+  .vaccination-records-section {
+    padding: 17px 14px;
+    border-radius: 11px;
+  }
+
+  .vaccination-form {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .vaccination-form-actions {
+    flex-wrap: wrap;
+  }
+
+  .vaccination-form-actions button {
+    flex: 1;
+  }
+
+  .vaccination-records-heading h2 {
+    font-size: 16px;
+  }
+
+  .vaccination-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .vaccination-search {
+    width: 100%;
+  }
+
+  .vaccination-filter {
+    width: 100%;
+  }
+
+  .vaccination-demo-notice {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  .vaccination-stat {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .vaccination-stat p {
+    font-size: 10px;
+  }
+
+  .vaccination-stat h2 {
+    font-size: 21px;
+  }
+}
+
