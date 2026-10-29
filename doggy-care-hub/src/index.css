@@ -4970,3 +4970,871 @@
   }
 }
 
+
+
+/* ========================================
+   REMINDERS PAGE
+======================================== */
+
+.reminders-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 28px 30px 36px;
+  color: #253044;
+}
+
+.reminders-page * {
+  box-sizing: border-box;
+}
+
+.reminders-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+
+.reminders-eyebrow {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.reminders-heading h1 {
+  margin: 0;
+  color: #202b3c;
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.7px;
+}
+
+.reminders-heading p {
+  max-width: 620px;
+  margin: 10px 0 0;
+  color: #778295;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.reminders-primary-button,
+.reminders-secondary-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reminders-primary-button {
+  background: #34465f;
+  color: #fff;
+}
+
+.reminders-primary-button:hover {
+  background: #26364c;
+}
+
+.reminders-secondary-button {
+  border-color: #dce2e9;
+  background: #fff;
+  color: #475569;
+}
+
+.reminders-secondary-button:hover {
+  background: #f8fafc;
+}
+
+.reminders-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 28px;
+}
+
+.reminders-stat {
+  display: flex;
+  min-width: 0;
+  min-height: 110px;
+  align-items: center;
+  gap: 15px;
+  padding: 21px;
+  border: 1px solid #e5e9ef;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 2px 7px rgb(15 23 42 / 3%);
+}
+
+.reminders-stat-icon {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.reminders-stat-icon.total {
+  background: #edf3fb;
+  color: #466a9a;
+}
+
+.reminders-stat-icon.pending {
+  background: #fff5df;
+  color: #b7791f;
+}
+
+.reminders-stat-icon.today {
+  background: #f0edff;
+  color: #7861b8;
+}
+
+.reminders-stat-icon.completed {
+  background: #eaf7ef;
+  color: #2f8a59;
+}
+
+.reminders-stat p {
+  margin: 0 0 8px;
+  color: #788496;
+  font-size: 12px;
+}
+
+.reminders-stat h2 {
+  margin: 0;
+  color: #253044;
+  font-size: 27px;
+}
+
+.reminders-form-card,
+.reminders-list-section {
+  margin-bottom: 25px;
+  padding: 25px;
+  border: 1px solid #e5e9ef;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 3%);
+}
+
+.reminders-form-card h2,
+.reminders-list-heading h2 {
+  margin: 0;
+  color: #253044;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.reminders-form-card > p,
+.reminders-list-heading p {
+  margin: 7px 0 20px;
+  color: #8791a1;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.reminders-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.reminders-form label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+  color: #485568;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reminders-form input,
+.reminders-form select {
+  width: 100%;
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #344054;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.reminders-form input:focus,
+.reminders-form select:focus {
+  border-color: #829fc4;
+  box-shadow: 0 0 0 3px rgb(91 132 185 / 12%);
+}
+
+.reminders-error {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #c24136;
+  font-size: 13px;
+}
+
+.reminders-form-actions {
+  display: flex;
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.reminders-list-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.reminders-list-heading p {
+  margin-bottom: 0;
+}
+
+.reminders-filter {
+  min-height: 40px;
+  max-width: 100%;
+  padding: 8px 30px 8px 11px;
+  border: 1px solid #dfe5ed;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #475569;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.reminders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reminder-card {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  padding: 19px;
+  border: 1px solid #e6ebf1;
+  border-radius: 12px;
+  background: #fff;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.reminder-card:hover {
+  border-color: #d0dbe8;
+  background: #fcfdff;
+}
+
+.reminder-card.is-completed {
+  background: #fafcfb;
+}
+
+.reminder-date {
+  display: flex;
+  width: 126px;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 7px;
+  color: #5778a6;
+}
+
+.reminder-date span {
+  color: #344054;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.reminder-date small {
+  color: #8791a1;
+  font-size: 12px;
+}
+
+.reminder-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.reminder-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+}
+
+.reminder-title-row h3 {
+  margin: 0;
+  color: #344054;
+  font-size: 15px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.reminder-card.is-completed .reminder-title-row h3 {
+  color: #788496;
+}
+
+.reminder-type {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: #edf3fb;
+  color: #466a9a;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.reminder-type.grooming {
+  background: #f3edff;
+  color: #7857ac;
+}
+
+.reminder-type.health-check {
+  background: #eaf7ef;
+  color: #2f8a59;
+}
+
+.reminder-type.feeding {
+  background: #fff5df;
+  color: #a66b13;
+}
+
+.reminder-type.medication,
+.reminder-type.vaccination {
+  background: #fff0ed;
+  color: #bc5b48;
+}
+
+.reminder-dog {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0;
+  color: #8791a1;
+  font-size: 12px;
+}
+
+.reminder-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.reminder-status.pending {
+  background: #fff5df;
+  color: #a66b13;
+}
+
+.reminder-status.completed {
+  background: #eaf7ef;
+  color: #2f8a59;
+}
+
+.reminder-actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+}
+
+.reminder-complete-button {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 10px;
+  border: 1px solid #dce2e9;
+  border-radius: 8px;
+  background: #fff;
+  color: #526176;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.reminder-complete-button:hover {
+  border-color: #c3dfce;
+  background: #edf8f1;
+  color: #27834f;
+}
+
+.reminder-delete-button {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #788496;
+  cursor: pointer;
+}
+
+.reminder-delete-button:hover {
+  border-color: #f1c9c4;
+  background: #fff0ee;
+  color: #c24136;
+}
+
+.reminders-empty-state {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  border: 1px dashed #dce3ec;
+  border-radius: 11px;
+  color: #6984a7;
+  text-align: center;
+}
+
+.reminders-empty-state h3 {
+  margin: 14px 0 0;
+  color: #344054;
+  font-size: 16px;
+}
+
+.reminders-empty-state p {
+  margin: 8px 0 0;
+  color: #8791a1;
+  font-size: 13px;
+}
+
+.reminders-demo-notice {
+  margin: 18px 2px 0;
+  color: #8791a1;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1100px) {
+  .reminders-page {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .reminders-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reminder-card {
+    flex-wrap: wrap;
+  }
+
+  .reminder-main {
+    flex-basis: 50%;
+  }
+
+  .reminder-actions {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .reminders-page {
+    padding: 20px 14px 28px;
+  }
+
+  .reminders-heading {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 17px;
+  }
+
+  .reminders-heading > button {
+    width: 100%;
+  }
+
+  .reminders-summary {
+    gap: 11px;
+    margin-bottom: 21px;
+  }
+
+  .reminders-stat {
+    min-height: 91px;
+    gap: 10px;
+    padding: 13px 11px;
+  }
+
+  .reminders-stat-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .reminders-stat-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .reminders-stat p {
+    font-size: 11px;
+  }
+
+  .reminders-stat h2 {
+    font-size: 23px;
+  }
+
+  .reminders-form-card,
+  .reminders-list-section {
+    padding: 17px 14px;
+  }
+
+  .reminders-form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .reminders-form-actions {
+    flex-wrap: wrap;
+  }
+
+  .reminders-form-actions button {
+    flex: 1;
+  }
+
+  .reminders-list-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .reminders-filter {
+    width: 100%;
+  }
+
+  .reminder-card {
+    align-items: flex-start;
+    gap: 13px;
+    padding: 14px;
+  }
+
+  .reminder-date {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .reminder-date small {
+    padding-left: 2px;
+  }
+
+  .reminder-main {
+    flex-basis: 100%;
+  }
+
+  .reminder-actions {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .reminder-complete-button {
+    flex: 1;
+  }
+
+  .reminder-delete-button {
+    flex-shrink: 0;
+  }
+
+  .reminders-demo-notice {
+    font-size: 11px;
+  }
+}
+
+
+
+/* =================================
+   NUTRITION RECOMMENDATION PAGE
+   ================================= */
+
+.nutrition-page {
+  width: 100%;
+  padding: 8px 4px 24px;
+  color: #293548;
+  box-sizing: border-box;
+}
+
+.nutrition-page * {
+  box-sizing: border-box;
+}
+
+.nutrition-breadcrumb {
+  margin-bottom: 12px;
+  color: #8791a1;
+  font-size: 12px;
+}
+
+.nutrition-breadcrumb span {
+  margin: 0 6px;
+}
+
+.nutrition-heading h1 {
+  margin: 0;
+  color: #293548;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.nutrition-dog-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: min(100%, 280px);
+  margin-top: 18px;
+  margin-bottom: 28px;
+}
+
+.nutrition-dog-selector label {
+  color: #7b8493;
+  font-size: 12px;
+}
+
+.nutrition-dog-selector select {
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #c9ced8;
+  border-radius: 7px;
+  outline: none;
+  background: #fff;
+  color: #293548;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.nutrition-dog-selector select:focus {
+  border-color: #718096;
+  box-shadow: 0 0 0 3px rgba(113, 128, 150, 0.12);
+}
+
+/* Information cards */
+
+.nutrition-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.nutrition-card {
+  min-width: 0;
+  min-height: 225px;
+  overflow: hidden;
+  border: 1px solid #cbd1dc;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.nutrition-card h2 {
+  margin: 0;
+  padding: 15px 16px;
+  border-bottom: 1px solid #e4e7ed;
+  color: #354154;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nutrition-card-content {
+  padding: 18px 16px;
+}
+
+/* Dog information */
+
+.nutrition-detail-row {
+  display: grid;
+  grid-template-columns: minmax(50px, 1fr) minmax(0, 1.2fr);
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 24px;
+  font-size: 12px;
+}
+
+.nutrition-detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.nutrition-detail-row span {
+  color: #8791a1;
+}
+
+.nutrition-detail-row strong {
+  color: #354154;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+/* Recommended diet */
+
+.nutrition-diet-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 22px;
+}
+
+.nutrition-diet-item:last-child {
+  margin-bottom: 0;
+}
+
+.nutrition-diet-item span {
+  color: #8791a1;
+  font-size: 12px;
+}
+
+.nutrition-diet-item strong {
+  color: #354154;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* Recommended foods */
+
+.nutrition-food-list {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 14px 16px;
+}
+
+.nutrition-food-item {
+  padding: 11px 13px;
+  border: 1px solid #cbd1dc;
+  border-radius: 7px;
+  background: #f5f6f8;
+  color: #536071;
+  font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.nutrition-food-item:hover {
+  background: #eef1f5;
+}
+
+/* Foods to avoid */
+
+.nutrition-avoid-card {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ef7777;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.nutrition-avoid-card h2 {
+  margin: 0 0 20px;
+  color: #d94b4b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nutrition-avoid-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 175px));
+  gap: 12px;
+}
+
+.nutrition-avoid-item {
+  padding: 11px 10px;
+  border: 1px solid #ef7777;
+  border-radius: 7px;
+  background: #fff0f0;
+  color: #d94b4b;
+  font-size: 12px;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.nutrition-avoid-item:hover {
+  background: #ffe4e4;
+}
+
+/* Disclaimer */
+
+.nutrition-disclaimer {
+  margin: 15px 0 0;
+  color: #7b8493;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .nutrition-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nutrition-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 650px) {
+  .nutrition-page {
+    padding: 4px 0 20px;
+  }
+
+  .nutrition-heading h1 {
+    font-size: 22px;
+  }
+
+  .nutrition-dog-selector {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .nutrition-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .nutrition-card,
+  .nutrition-card:last-child {
+    grid-column: auto;
+    min-height: auto;
+  }
+
+  .nutrition-avoid-card {
+    padding: 13px;
+  }
+
+  .nutrition-avoid-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .nutrition-avoid-item {
+    padding: 12px;
+  }
+}

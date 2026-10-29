@@ -9,7 +9,8 @@ import Dogs from "./pages/Dogs.jsx";
 import Breeds from "./pages/Breeds.jsx";
 import Vaccinations from "./pages/Vaccinations.jsx";
 import WorkspaceLayout from "./components/WorkspaceLayout.jsx";
-
+import Reminders from "./pages/Reminders";
+import Nutrition from "./pages/Nutrition";
 import { PawPrint } from "lucide-react";
 import "./index.css";
 
@@ -160,20 +161,12 @@ function AppContent() {
           <Route path="/breeds" element={<Breeds />} />
 
           <Route
-            path="/vaccinations"
-            element={<Vaccinations />}
-          />
+            path="/vaccinations" element={<Vaccinations />} />
 
-          <Route
-            path="/reminders"
-            element={
-              <WorkspacePlaceholder
-                title="Reminders"
-                description="Manage upcoming vaccination and dog-care reminders in one place."
-              />
-            }
-          />
+          <Route path="/reminders" element={<Reminders />} />
 
+         <Route path="/nutrition" element={<Nutrition />} />
+        
           <Route
             path="/care-guidance"
             element={
