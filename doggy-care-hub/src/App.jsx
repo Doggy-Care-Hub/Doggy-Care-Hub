@@ -11,7 +11,10 @@ import Vaccinations from "./pages/Vaccinations.jsx";
 import WorkspaceLayout from "./components/WorkspaceLayout.jsx";
 import Reminders from "./pages/Reminders";
 import Nutrition from "./pages/Nutrition";
-import { PawPrint } from "lucide-react";
+import HealthHistory from "./pages/HealthHistory.jsx";
+import CareGuidance from "./pages/CareGuidance.jsx";
+import Assistant from "./pages/Assistant.jsx";
+import Profile from "./pages/Profile.jsx";
 import "./index.css";
 
 
@@ -124,15 +127,17 @@ function AppContent() {
   const { pathname } = useLocation();
 
   const workspacePaths = [
-    "/dashboard",
-    "/dogs",
-    "/breeds",
-    "/vaccinations",
-    "/reminders",
-    "/care-guidance",
-    "/assistant",
-    "/profile",
-  ];
+  "/dashboard",
+  "/dogs",
+  "/breeds",
+  "/vaccinations",
+  "/reminders",
+  "/nutrition",
+  "/health-history",
+  "/care-guidance",
+  "/assistant",
+  "/profile",
+];
 
   const isWorkspace = workspacePaths.some(
     (path) =>
@@ -143,84 +148,69 @@ function AppContent() {
     <>
       {!isWorkspace && <PublicNavigation />}
 
-      <Routes>
-        {/* Public pages */}
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
 
-        {/* Shared workspace layout */}
-        <Route element={<WorkspaceLayout />}>
-          <Route
-            path="/dashboard"
-            element={<Dashboard />}
-          />
+<Routes>
+  {/* Public pages */}
+  <Route path="/" element={<Home />} />
+  <Route path="/login" element={<Login />} />
+  <Route path="/register" element={<Register />} />
 
-          <Route path="/dogs" element={<Dogs />} />
+  {/* Shared workspace layout */}
+  <Route element={<WorkspaceLayout />}>
+    <Route path="/dashboard" element={<Dashboard />} />
 
-          <Route path="/breeds" element={<Breeds />} />
+    <Route path="/dogs" element={<Dogs />} />
 
-          <Route
-            path="/vaccinations" element={<Vaccinations />} />
+    <Route path="/breeds" element={<Breeds />} />
 
-          <Route path="/reminders" element={<Reminders />} />
+    <Route path="/vaccinations" element={<Vaccinations />} />
 
-         <Route path="/nutrition" element={<Nutrition />} />
-        
-          <Route
-            path="/care-guidance"
-            element={
-              <WorkspacePlaceholder
-                title="Care Guidance"
-                description="Explore general guidance on nutrition, grooming, hygiene, and preventive dog care."
-              />
-            }
-          />
+    <Route path="/reminders" element={<Reminders />} />
 
-          <Route
-            path="/assistant"
-            element={
-              <WorkspacePlaceholder
-                title="AI Care Assistant"
-                description="Get general dog-care information. This assistant is not a veterinary diagnosis service."
-              />
-            }
-          />
+    <Route path="/nutrition" element={<Nutrition />} />
 
-          <Route
-            path="/profile"
-            element={
-              <WorkspacePlaceholder
-                title="Settings"
-                description="Profile and account settings will be implemented in a later stage."
-              />
-            }
-          />
-        </Route>
+    <Route
+      path="/health-history"
+      element={<HealthHistory />}
+    />
 
-        {/* Page not found */}
-        <Route
-          path="*"
-          element={
-            <main className="auth-page">
-              <section className="auth-card">
-                <h1>Page not found</h1>
+    <Route
+      path="/care-guidance"
+      element={<CareGuidance />}
+    />
 
-                <p className="auth-description">
-                  The page you requested does not exist.
-                </p>
+    <Route
+      path="/assistant"
+      element={<Assistant />}
+    />
 
-                <Link
-                  className="button button-primary"
-                  to="/"
-                >
-                  Return Home
-                </Link>
-              </section>
-            </main>
-          }
-        />
-      </Routes>
+    <Route
+      path="/profile"
+      element={<Profile />}
+    />
+  </Route>
+
+  {/* Page not found */}
+  <Route
+    path="*"
+    element={
+      <main className="auth-page">
+        <section className="auth-card">
+          <h1>Page not found</h1>
+
+          <p className="auth-description">
+            The page you requested does not exist.
+          </p>
+
+          <Link className="button button-primary" to="/">
+            Return Home
+          </Link>
+        </section>
+      </main>
+    }
+  />
+</Routes>
+
 
       {!isWorkspace && <PublicFooter />}
     </>
